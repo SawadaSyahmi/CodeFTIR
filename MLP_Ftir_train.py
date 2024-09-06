@@ -60,7 +60,8 @@ print(class_report_rf)
 plt.figure(figsize=(6,4))
 
 # Random Forest Confusion Matrix
-sns.heatmap(conf_matrix_rf, annot=True, fmt='d', cmap='Blues', xticklabels=rf_clf.classes_, yticklabels=rf_clf.classes_)
+sns.color_palette("YlOrBr")
+sns.heatmap(conf_matrix_rf, annot=True, fmt='d', cmap='YlOrBr', xticklabels=rf_clf.classes_, yticklabels=rf_clf.classes_)
 plt.title('MLP Confusion Matrix')
 plt.xlabel('Predicted')
 plt.ylabel('True')

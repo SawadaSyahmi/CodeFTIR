@@ -57,8 +57,9 @@ with pd.ExcelWriter('classification_reportSVM.xlsx', engine='xlsxwriter') as wri
 
 # Plot confusion matrix
 plt.figure(figsize=(6,4))
+sns.color_palette("Blues")
 sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', xticklabels=clf.classes_, yticklabels=clf.classes_)
-plt.title('Confusion Matrix')
+plt.title('Support Vector Machine Confusion Matrix')
 plt.xlabel('Predicted')
 plt.ylabel('True')
 plt.savefig('CMatrixSVM.png')

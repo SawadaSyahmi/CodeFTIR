@@ -57,7 +57,8 @@ print(class_report_gbt)
 plt.figure(figsize=(6,4))
 
 # Gradient Boosting Confusion Matrix
-sns.heatmap(conf_matrix_gbt, annot=True, fmt='d', cmap='Greens', xticklabels=gbt_clf.classes_, yticklabels=gbt_clf.classes_)
+sns.color_palette("Oranges")
+sns.heatmap(conf_matrix_gbt, annot=True, fmt='d', cmap='Oranges', xticklabels=gbt_clf.classes_, yticklabels=gbt_clf.classes_)
 plt.title('Gradient Boosting Confusion Matrix')
 plt.xlabel('Predicted')
 plt.ylabel('True')

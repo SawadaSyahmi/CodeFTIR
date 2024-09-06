@@ -46,18 +46,19 @@ print('Classification Report: \n', class_report)
 
 # add the classification report in excel file
 
-report_dict = classification_report(y_test, y_pred, output_dict=True)
-report_df = pd.DataFrame(report_dict).transpose()
-#report_df.to_csv('DT_classification_report.csv', sep='\t', index=True)
+# report_dict = classification_report(y_test, y_pred, output_dict=True)
+# report_df = pd.DataFrame(report_dict).transpose()
+# #report_df.to_csv('DT_classification_report.csv', sep='\t', index=True)
 
-with pd.ExcelWriter('classification_reportDT.xlsx', engine='xlsxwriter') as writer:
-    report_df.to_excel(writer, sheet_name='DT', index=True)
+# with pd.ExcelWriter('classification_reportDT.xlsx', engine='xlsxwriter') as writer:
+#     report_df.to_excel(writer, sheet_name='DT', index=True)
 
 
 # Plot confusion matrix
 plt.figure(figsize=(6,4))
-sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', xticklabels=clf.classes_, yticklabels=clf.classes_)
-plt.title('Confusion Matrix')
+sns.color_palette("Purples")
+sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Purples', xticklabels=clf.classes_, yticklabels=clf.classes_)
+plt.title('Decison Tree Confusion Matrix')
 plt.xlabel('Predicted')
 plt.ylabel('True')
 plt.savefig('CMatrixDT.png')
